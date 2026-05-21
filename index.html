@@ -70,36 +70,49 @@
 
         .btn-nav { padding: 18px 45px; background: var(--neon); border: none; border-radius: 50px; color: white; font-weight: 800; cursor: pointer; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4); }
         .warning-box { margin-top: 25px; padding: 15px; background: rgba(239, 68, 68, 0.1); border-radius: 15px; border: 1px solid rgba(239, 68, 68, 0.3); max-width: 600px; margin-left: auto; margin-right: auto; }
- @media (max-width: 768px) {
+@media (max-width: 768px) {
+            /* 1. Kekalkan kebolehan gelongsor skrin ke kiri/kanan */
             body {
-                overflow-y: auto !important;
-                height: auto !important;
+                overflow-x: hidden !important;
+                overflow-y: hidden !important;
+                height: 100vh !important;
             }
-            .wrapper, .page {
-                height: auto !important;
-                min-height: 100vh;
-                width: 100% !important;
-                transform: none !important; /* Mematikan gelongsor desktop jika di mobile */
+            .wrapper {
+                width: 400vw !important; /* Wajib kekal 400vw untuk slider 4 halaman */
+                height: 100vh !important;
             }
             .page {
-                display: block !important;
-                padding: 15px 10px !important;
+                width: 100vw !important; /* Setiap halaman ambil tepat 1 skrin telefon */
+                height: 100vh !important;
+                padding: 10px !important;
+                overflow-y: auto !important; /* Benarkan skrol atas bawah jika kandungan panjang */
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
             }
+
+            /* 2. Baiki Saiz Kad Kandungan Utama */
             .info-card, .main-window {
-                width: 100% !important;
+                width: 95% !important;
                 max-width: 100% !important;
                 padding: 20px 15px !important;
                 border-radius: 24px !important;
                 height: auto !important;
+                max-height: 92vh !important;
+                overflow-y: auto !important;
             }
+
+            /* 3. Tukar Grid Sebelah-menyebelah kepada Atas-Bawah */
             .info-grid, .dashboard-content, .drug-grid {
                 grid-template-columns: 1fr !important;
-                gap: 15px !important;
-                padding: 10px 0 !important;
+                gap: 12px !important;
+                padding: 5px 0 !important;
             }
+
+            /* 4. Baiki Bahagian Menu Atas (Header Kalkulator) */
             .header {
                 flex-direction: column !important;
-                gap: 12px !important;
+                gap: 10px !important;
                 padding: 15px !important;
                 text-align: center;
             }
@@ -107,28 +120,42 @@
                 display: flex !important;
                 flex-wrap: wrap !important;
                 justify-content: center !important;
-                gap: 6px !important;
+                gap: 5px !important;
             }
             .tab {
-                font-size: 11px !important;
-                padding: 8px 12px !important;
+                font-size: 10px !important;
+                padding: 6px 10px !important;
             }
+
+            /* 5. Susun Semula Kad Pilihan Pintu Masuk */
             .info-card div[style*="grid-template-columns"] {
                 grid-template-columns: 1fr !important;
-                gap: 15px !important;
+                gap: 12px !important;
+            }
+            .choice-card {
+                padding: 15px !important;
             }
             .pathway-tabs {
                 flex-wrap: wrap !important;
-                gap: 5px !important;
+                gap: 4px !important;
             }
+            .p-tab {
+                font-size: 10px !important;
+                padding: 6px 10px !important;
+            }
+
+            /* 6. Kecilkan Fon Tulisan Yang Terlampau Besar */
             .hero h1 {
-                font-size: 2rem !important;
+                font-size: 1.8rem !important;
             }
             .hero h1 span {
-                font-size: 2.8rem !important;
+                font-size: 2.4rem !important;
             }
             .ev-val {
-                font-size: 50px !important;
+                font-size: 45px !important;
+            }
+            .log {
+                height: 140px !important;
             }
         }
     </style>
