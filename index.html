@@ -129,8 +129,29 @@
         font-size: 10px;
     }
 
+    /* IMPORTANT: Dashboard becomes one column on phone */
     .dashboard-content {
+        grid-template-columns: 1fr !important;
         overflow-y: auto;
+        gap: 15px !important;
+        padding: 15px !important;
+    }
+
+    /* Drug slots become one column */
+    .drug-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    /* Keep dropdowns inside the phone screen */
+    #drugGrid select {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .ev-val {
+        font-size: 50px !important;
     }
 
     table {
@@ -140,29 +161,6 @@
     }
 
 }
-        @media screen and (max-width: 768px) {
-
-    #drugGrid {
-        display: flex !important;
-        flex-direction: column !important;
-        width: 100% !important;
-        gap: 15px !important;
-    }
-
-    #drugGrid .slot {
-        width: 100% !important;
-        min-width: 0 !important;
-        box-sizing: border-box !important;
-    }
-
-    #drugGrid select {
-        width: 100% !important;
-        max-width: 100% !important;
-        box-sizing: border-box !important;
-    }
-
-}
-  
     </style>
 </head>
 <body>
